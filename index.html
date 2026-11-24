@@ -2,12 +2,338 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunday School | مدارس الأحد</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunday School | مدارس الأحد</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg: #0b0d12;
+  --panel: #141821;
+  --panel2: #1b202b;
+  --gold: #d6b56d;
+  --text: #f5f5f5;
+  --muted: #9ba3b2;
+  --border: #292f3b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+header {
+  height: 76px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7%;
+  background: rgba(11,13,18,.95);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 21px;
+}
+
+.logo-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  background: linear-gradient(135deg,#e6ca8b,#a7833e);
+  color: #17130c;
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.header-label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+main {
+  max-width: 1150px;
+  margin: auto;
+  padding: 65px 22px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 7px 18px;
+  border: 1px solid #665536;
+  color: var(--gold);
+  border-radius: 30px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(30px,5vw,48px);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 2;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px;
+  transition: .25s;
+}
+
+.card:hover {
+  border-color: #806b42;
+  transform: translateY(-3px);
+}
+
+.card-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  background: #292419;
+  color: var(--gold);
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 23px;
+}
+
+label {
+  display: block;
+  color: #d5d8df;
+  font-size: 13px;
+  margin: 14px 0 7px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border);
+  background: #0d1016;
+  color: white;
+  border-radius: 11px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: var(--gold);
+}
+
+input::placeholder {
+  color: #697180;
+}
+
+.main-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 11px;
+  background: linear-gradient(135deg,#e5c987,#b28b48);
+  color: #17130c;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 22px;
+  transition: .2s;
+}
+
+.main-btn:hover {
+  filter: brightness(1.1);
+}
+
+.notice {
+  background: #191b20;
+  border: 1px solid #34303a;
+  color: #c4bda9;
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.9;
+  margin-top: 15px;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer span {
+  color: var(--gold);
+}
+
+@media(max-width:700px) {
+  header {
+    padding: 0 18px;
+  }
+
+  .header-label {
+    display: none;
+  }
+
+  main {
+    padding: 45px 16px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 23px;
+  }
+}
+</style>
 </head>
+
 <body>
-    <h1>مرحباً بكم في مدارس الأحد ❤️</h1>
-    <p>نظام الحضور والغياب - الصف السادس الابتدائي</p>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">✝</div>
+    <div>Sunday <span>School</span></div>
+  </div>
+  <div class="header-label">نظام إدارة مدارس الأحد</div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="eyebrow">✦ الصف السادس الابتدائي ✦</div>
+    <h1>أهلاً بكم في <span>مدارس الأحد</span></h1>
+    <p>
+      نظام إلكتروني لتنظيم الحضور والغياب ومتابعة النقاط
+      <br>
+      نكبر معاً في المحبة والمعرفة ❤️
+    </p>
+  </section>
+
+  <section class="cards">
+
+    <div class="card">
+      <div class="card-icon">✓</div>
+      <h2>تسجيل الحضور</h2>
+      <p>سجّل حضورك في اجتماع مدارس الأحد باستخدام بياناتك.</p>
+
+      <form id="attendanceForm">
+        <label for="attendanceName">اسم الطالب</label>
+        <input id="attendanceName" type="text"
+          placeholder="اكتب اسمك بالكامل" required>
+
+        <label for="attendanceCode">الكود الخاص بك</label>
+        <input id="attendanceCode" type="password"
+          placeholder="أدخل كود الطالب" required>
+
+        <button class="main-btn" type="submit">
+          تسجيل الحضور
+        </button>
+      </form>
+
+      <div class="notice">
+        التسجيل الفعلي سيتاح بعد ربط النظام بقاعدة البيانات.
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">★</div>
+      <h2>متابعة الطالب</h2>
+      <p>تابع عدد مرات الحضور والغياب والنقاط وسجل الاجتماعات.</p>
+
+      <form id="studentForm">
+        <label for="studentName">اسم الطالب</label>
+        <input id="studentName" type="text"
+          placeholder="اكتب اسمك بالكامل" required>
+
+        <label for="studentCode">الكود الخاص بك</label>
+        <input id="studentCode" type="password"
+          placeholder="أدخل كود الطالب" required>
+
+        <button class="main-btn" type="submit">
+          عرض سجلي
+        </button>
+      </form>
+
+      <div class="notice">
+        بيانات الطلاب ستكون خاصة، ولن تظهر إلا بعد التحقق من الهوية.
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  Sunday School © 2026 — صنع بمحبة <span>♥</span>
+</footer>
+
+<script>
+document.getElementById('attendanceForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('واجهة تسجيل الحضور جاهزة، وسيتم تفعيل التسجيل بعد ربط قاعدة البيانات.');
+});
+
+document.getElementById('studentForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('سيتم تفعيل متابعة الطالب بعد ربط قاعدة البيانات والتحقق من بياناته.');
+});
+</script>
+
 </body>
 </html>
