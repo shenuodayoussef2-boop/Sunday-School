@@ -325,6 +325,17 @@ footer span {
 </footer>
 
 <script>
+// Supabase Connection
+const SUPABASE_URL = 'https://jplbllhxlkmlpkpnidap.supabase.co';
+
+const SUPABASE_PUBLISHABLE_KEY ='sb_publishable_3PzxYE_mI3w99tXjphJVFg_fSIlbW6v';
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+console.log('Sunday School: Supabase initialized');
 document.getElementById('attendanceForm').addEventListener('submit', function(e) {
   e.preventDefault();
   alert('واجهة تسجيل الحضور جاهزة، وسيتم تفعيل التسجيل بعد ربط قاعدة البيانات.');
